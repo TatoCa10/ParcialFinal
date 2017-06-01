@@ -61,7 +61,7 @@ public class ChartServlet extends HttpServlet {
         //dataset.addValue(x2, "Series 1", "Category 2");   
         dataset.addValue(x2, "Series 2", "Category 1");   
         //dataset.addValue(29.0, "Series 2", "Category 2");   
-        dataset.addValue(41.0, "Series 3", "Category 1");   
+        //dataset.addValue(41.0, "Series 3", "Category 1");   
         //dataset.addValue(33.0, "Series 3", "Category 2");   
 
 		
