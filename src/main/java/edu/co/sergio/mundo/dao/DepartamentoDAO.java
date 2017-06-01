@@ -192,7 +192,7 @@ public ArrayList consulta1() {
             Logger.getLogger(DepartamentoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        String query = "select KgMiel, IDColumna from Recoleccion";
+        String query = "select KgMiel, IDColmena from Recoleccion";
         Statement st = null;
         ResultSet rs = null;
         ArrayList resultado = new ArrayList();
