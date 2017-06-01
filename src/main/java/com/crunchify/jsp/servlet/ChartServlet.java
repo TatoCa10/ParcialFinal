@@ -68,7 +68,7 @@ public class ChartServlet extends HttpServlet {
         JFreeChart chart = ChartFactory.createBarChart3D(
             "3D Bar Chart Demo",      // chart title
             "Category",               // domain axis label
-            "Values",                  // range axis label
+            "Value",                  // range axis label
             dataset,                  // data
             PlotOrientation.VERTICAL, // orientation
             true,                     // include legend
