@@ -50,14 +50,16 @@ public class ChartServlet extends HttpServlet {
             DepartamentoDAO dao= new DepartamentoDAO();
             ArrayList Result= new ArrayList();
             Result=dao.consulta1();
+            
             int x= (Integer)Result.get(0);
             int x2= (Integer)Result.get(2);
             String id= (String)Result.get(1);
             String id2= (String)Result.get(2);
-        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        dataset.addValue(x, id, "ID");   
+        
+            DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        dataset.addValue(x, "Series "+id, "ID");   
         //dataset.addValue(x2, "Series 1", "Category 2");   
-        dataset.addValue(x2, id2, "ID");   
+        dataset.addValue(x2, "Series "+id2, "ID");   
         //dataset.addValue(29.0, "Series 2", "Category 2");   
         //dataset.addValue(41.0, "Series 3", "Category 1");   
         //dataset.addValue(33.0, "Series 3", "Category 2");   
