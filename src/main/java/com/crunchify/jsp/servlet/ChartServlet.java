@@ -54,7 +54,7 @@ public class ChartServlet extends HttpServlet {
             int x= (Integer)Result.get(0);
             int x2= (Integer)Result.get(2);
             String id= (String)Result.get(1);
-            String id2= (String)Result.get(2);
+            String id2= (String)Result.get(3);
         
             DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         dataset.addValue(x, "Series 1", "Category 1");   
@@ -71,7 +71,7 @@ public class ChartServlet extends HttpServlet {
             "Value",                  // range axis label
             dataset,                  // data
             PlotOrientation.VERTICAL, // orientation
-            true,                     // include legend
+            false,                     // include legend
             true,                     // tooltips
             false                     // urls
         );
