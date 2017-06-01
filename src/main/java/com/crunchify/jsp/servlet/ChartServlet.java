@@ -52,19 +52,21 @@ public class ChartServlet extends HttpServlet {
             Result=dao.consulta1();
             int x= (Integer)Result.get(0);
             int x2= (Integer)Result.get(2);
+            String id= (String)Result.get(1);
+            String id2= (String)Result.get(2);
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        dataset.addValue(x, "Series 1", "Category 1");   
+        dataset.addValue(x, id, "ID");   
         //dataset.addValue(x2, "Series 1", "Category 2");   
-        dataset.addValue(x2, "Series 2", "Category 1");   
+        dataset.addValue(x2, id2, "ID");   
         //dataset.addValue(29.0, "Series 2", "Category 2");   
-        dataset.addValue(41.0, "Series 3", "Category 1");   
+        //dataset.addValue(41.0, "Series 3", "Category 1");   
         //dataset.addValue(33.0, "Series 3", "Category 2");   
 
 		
         JFreeChart chart = ChartFactory.createBarChart3D(
             "3D Bar Chart Demo",      // chart title
             "Category",               // domain axis label
-            "Value",                  // range axis label
+            "kg",                  // range axis label
             dataset,                  // data
             PlotOrientation.VERTICAL, // orientation
             true,                     // include legend
