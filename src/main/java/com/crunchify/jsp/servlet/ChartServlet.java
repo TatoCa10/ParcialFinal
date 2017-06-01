@@ -5,10 +5,12 @@
  */
 package com.crunchify.jsp.servlet;
 
+import edu.co.sergio.mundo.dao.DepartamentoDAO;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.ArrayList;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -45,13 +47,17 @@ public class ChartServlet extends HttpServlet {
 
 	public JFreeChart getChart() {
 		
+            DepartamentoDAO dao= new DepartamentoDAO();
+            ArrayList Result= new ArrayList();
+            Result=dao.consulta1();
+            
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        dataset.addValue(25.0, "Series 1", "Category 1");   
-        dataset.addValue(34.0, "Series 1", "Category 2");   
-        dataset.addValue(19.0, "Series 2", "Category 1");   
-        dataset.addValue(29.0, "Series 2", "Category 2");   
-        dataset.addValue(41.0, "Series 3", "Category 1");   
-        dataset.addValue(33.0, "Series 3", "Category 2");   
+        dataset.addValue((Integer)Result.get(0), "Series 1", "Category 1");   
+        dataset.addValue((Integer)Result.get(2), "Series 1", "Category 2");   
+//        dataset.addValue(19.0, "Series 2", "Category 1");   
+//        dataset.addValue(29.0, "Series 2", "Category 2");   
+//        dataset.addValue(41.0, "Series 3", "Category 1");   
+//        dataset.addValue(33.0, "Series 3", "Category 2");   
 
 		
         JFreeChart chart = ChartFactory.createBarChart3D(

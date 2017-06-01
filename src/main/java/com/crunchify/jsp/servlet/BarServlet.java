@@ -48,7 +48,7 @@ public class BarServlet extends HttpServlet {
             DepartamentoDAO dao= new DepartamentoDAO();
             ArrayList Result= new ArrayList();
             Result=dao.consulta1();
-            int x= (Integer)Result.get(0);
+            
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         dataset.addValue((Integer)Result.get(0), (String)Result.get(1), "451");
         dataset.addValue((Integer)Result.get(2), (String)Result.get(3), "851");
