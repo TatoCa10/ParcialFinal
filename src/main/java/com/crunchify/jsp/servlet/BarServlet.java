@@ -6,10 +6,12 @@
 package com.crunchify.jsp.servlet;
 
 
+import edu.co.sergio.mundo.dao.DepartamentoDAO;
 import java.awt.Color;
 import java.awt.Paint;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.ArrayList;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -43,16 +45,19 @@ public class BarServlet extends HttpServlet {
 
 	public JFreeChart getChart() {
 		
-        
+            DepartamentoDAO dao= new DepartamentoDAO();
+            ArrayList Result= new ArrayList();
+            Result=dao.consulta1();
+            int x= (Integer)Result.get(0);
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        dataset.addValue(15, "1", "451");
-        dataset.addValue(12, "1", "851");
-        dataset.addValue(10, "2", "362");
-        dataset.addValue(5,  "2",  "142"); 
+        dataset.addValue((Integer)Result.get(0), (String)Result.get(1), "451");
+        dataset.addValue((Integer)Result.get(2), (String)Result.get(3), "851");
+//        dataset.addValue(10, "2", "362");
+//        dataset.addValue(5,  "2",  "142"); 
         
  JFreeChart chart = ChartFactory.createBarChart(
             "Bar Chart Demo 3",       // chart title
-            "Category",               // domain axis label
+            "Colmena",               // domain axis label
             "Value",                  // range axis label
             dataset,                  // data
             PlotOrientation.VERTICAL, // the plot orientation

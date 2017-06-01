@@ -181,4 +181,34 @@ public class DepartamentoDAO implements IBaseDatos<Departamento> {
 	   
 	   return result;
 	}
+
+
+public ArrayList consulta1() {
+
+        Connection connection = null;
+        try {
+            connection = Conexion.getConnection();
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(DepartamentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        String query = "select KgMiel, IDColumna from Recoleccion";
+        Statement st = null;
+        ResultSet rs = null;
+        ArrayList resultado = new ArrayList();
+
+        try {
+            st = connection.createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()) {
+                resultado.add(rs.getInt(1));
+                resultado.add(Integer.toString(rs.getInt(2)));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DepartamentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return resultado;
+    }
+
 }
