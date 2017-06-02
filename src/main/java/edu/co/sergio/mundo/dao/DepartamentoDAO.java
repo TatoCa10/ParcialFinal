@@ -211,4 +211,34 @@ public ArrayList consulta1() {
         return resultado;
     }
 
+public ArrayList consulta2() {
+
+        Connection connection = null;
+        try {
+            connection = Conexion.getConnection();
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(DepartamentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        String query = "select ConCera, ConAlimento,ConCria,Vacios from Colmena";
+        Statement st = null;
+        ResultSet rs = null;
+        ArrayList resultado = new ArrayList();
+        int i=0;
+        try {
+            st = connection.createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()) {
+                    i= rs.getInt(1)+rs.getInt(3)+rs.getInt(4);
+                
+                resultado.add(i);
+                resultado.add(rs.getInt(2));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DepartamentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return resultado;
+    }
+
 }

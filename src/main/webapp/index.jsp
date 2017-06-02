@@ -38,6 +38,7 @@ body {
     
     %>
     <img src="ChartServlet" /><br/>
+    <img src="BarServlet" /><br/>
     Descargar Excel <a href="HSSFCreate">Descargar</a> 
     
 </body>
