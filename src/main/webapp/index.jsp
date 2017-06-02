@@ -18,6 +18,7 @@ body {
 </head>
 <body>
     <div align="center" style="margin-top: 50px;">
+        <h1>DashBoard<h1/>
         <img src="BarServlet" /> <img src="ChartServlet" /><br/>
     
      </div>
